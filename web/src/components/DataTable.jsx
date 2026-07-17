@@ -1,4 +1,4 @@
-export default function DataTable({ columns, rows, emptyLabel = 'Aucune donnée' }) {
+export default function DataTable({ columns, rows, emptyLabel = 'No data' }) {
   if (!rows.length) return <p className="empty-state">{emptyLabel}</p>;
 
   return (

@@ -3,14 +3,14 @@ import { useFetch } from '../hooks/useFetch';
 import DataTable from '../components/DataTable';
 
 const COLUMNS = [
-  { key: 'name', header: 'Nom' },
-  { key: 'address', header: 'Adresse' },
-  { key: 'status', header: 'Statut' },
-  { key: 'phone', header: 'Téléphone' },
+  { key: 'name', header: 'Name' },
+  { key: 'address', header: 'Address' },
+  { key: 'status', header: 'Status' },
+  { key: 'phone', header: 'Phone' },
   { key: 'score', header: 'Score' },
   {
     key: 'specialties',
-    header: 'Spécialités',
+    header: 'Specialties',
     render: (row) => (row.specialties || []).join(', ') || '—',
   },
 ];
@@ -20,10 +20,10 @@ export default function HospitalsPage() {
 
   return (
     <section>
-      <h2>Hôpitaux</h2>
-      {isLoading && <p>Chargement…</p>}
+      <h2>Hospitals</h2>
+      {isLoading && <p>Loading…</p>}
       {error && <p className="form-error">{error}</p>}
-      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="Aucun hôpital" />}
+      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="No hospitals" />}
     </section>
   );
 }

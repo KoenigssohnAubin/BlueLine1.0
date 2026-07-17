@@ -4,7 +4,7 @@ import { useAuth } from '../auth/AuthContext';
 export default function ProtectedRoute({ children }) {
   const { isAuthenticated, isInitializing } = useAuth();
 
-  if (isInitializing) return <div className="page-loading">Chargement…</div>;
+  if (isInitializing) return <div className="page-loading">Loading…</div>;
   if (!isAuthenticated) return <Navigate to="/login" replace />;
 
   return children;

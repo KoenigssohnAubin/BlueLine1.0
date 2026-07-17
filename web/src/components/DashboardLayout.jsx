@@ -5,10 +5,10 @@ import logo from '../assets/logo.png';
 const NAV_ITEMS = [
   { to: '/missions', label: 'Missions' },
   { to: '/ambulances', label: 'Ambulances' },
-  { to: '/hospitals', label: 'Hôpitaux' },
-  { to: '/alerts', label: 'Alertes' },
-  { to: '/stats', label: 'Statistiques' },
-  { to: '/users', label: 'Utilisateurs', adminOnly: true },
+  { to: '/hospitals', label: 'Hospitals' },
+  { to: '/alerts', label: 'Alerts' },
+  { to: '/stats', label: 'Stats' },
+  { to: '/users', label: 'Users', adminOnly: true },
 ];
 
 export default function DashboardLayout() {
@@ -38,7 +38,7 @@ export default function DashboardLayout() {
         <header className="topbar">
           <span>{user?.name || user?.username}</span>
           <span className="role-badge">{user?.role}</span>
-          <button className="btn-link" onClick={logout}>Déconnexion</button>
+          <button className="btn-link" onClick={logout}>Sign out</button>
         </header>
         <main className="content">
           <Outlet />

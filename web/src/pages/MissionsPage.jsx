@@ -4,11 +4,11 @@ import DataTable from '../components/DataTable';
 
 const COLUMNS = [
   { key: 'code', header: 'Code' },
-  { key: 'status', header: 'Statut' },
-  { key: 'priority', header: 'Priorité' },
+  { key: 'status', header: 'Status' },
+  { key: 'priority', header: 'Priority' },
   { key: 'type', header: 'Type' },
   { key: 'ambulanceCode', header: 'Ambulance' },
-  { key: 'driver', header: 'Conducteur' },
+  { key: 'driver', header: 'Driver' },
   { key: 'etaMinutes', header: 'ETA (min)' },
 ];
 
@@ -18,9 +18,9 @@ export default function MissionsPage() {
   return (
     <section>
       <h2>Missions</h2>
-      {isLoading && <p>Chargement…</p>}
+      {isLoading && <p>Loading…</p>}
       {error && <p className="form-error">{error}</p>}
-      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="Aucune mission" />}
+      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="No missions" />}
     </section>
   );
 }

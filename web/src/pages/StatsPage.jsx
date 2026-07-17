@@ -2,9 +2,9 @@ import * as api from '../api';
 import { useFetch } from '../hooks/useFetch';
 
 const PERIODS = [
-  { key: 'today', label: "Aujourd'hui" },
-  { key: 'week', label: 'Cette semaine' },
-  { key: 'month', label: 'Ce mois' },
+  { key: 'today', label: 'Today' },
+  { key: 'week', label: 'This week' },
+  { key: 'month', label: 'This month' },
 ];
 
 export default function StatsPage() {
@@ -15,8 +15,8 @@ export default function StatsPage() {
 
   return (
     <section>
-      <h2>Statistiques</h2>
-      {isLoading && <p>Chargement…</p>}
+      <h2>Stats</h2>
+      {isLoading && <p>Loading…</p>}
       {error && <p className="form-error">{error}</p>}
       {data && (
         <div className="stats-grid">
@@ -28,11 +28,11 @@ export default function StatsPage() {
                 <dl>
                   <dt>Missions</dt>
                   <dd>{s.missions}</dd>
-                  <dt>Terminées</dt>
+                  <dt>Completed</dt>
                   <dd>{s.completed}</dd>
-                  <dt>Durée moy.</dt>
+                  <dt>Avg. duration</dt>
                   <dd>{s.avgTime}</dd>
-                  <dt>Taux de réussite</dt>
+                  <dt>Success rate</dt>
                   <dd>{s.successRate}%</dd>
                 </dl>
               </div>

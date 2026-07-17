@@ -4,11 +4,11 @@ import DataTable from '../components/DataTable';
 
 const COLUMNS = [
   { key: 'type', header: 'Type' },
-  { key: 'severity', header: 'Gravité' },
+  { key: 'severity', header: 'Severity' },
   { key: 'message', header: 'Message' },
-  { key: 'location', header: 'Lieu' },
-  { key: 'active', header: 'Actif', render: (row) => (row.active ? 'Oui' : 'Non') },
-  { key: 'reportedBy', header: 'Signalé par' },
+  { key: 'location', header: 'Location' },
+  { key: 'active', header: 'Active', render: (row) => (row.active ? 'Yes' : 'No') },
+  { key: 'reportedBy', header: 'Reported by' },
 ];
 
 export default function AlertsPage() {
@@ -16,10 +16,10 @@ export default function AlertsPage() {
 
   return (
     <section>
-      <h2>Alertes</h2>
-      {isLoading && <p>Chargement…</p>}
+      <h2>Alerts</h2>
+      {isLoading && <p>Loading…</p>}
       {error && <p className="form-error">{error}</p>}
-      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="Aucune alerte" />}
+      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="No alerts" />}
     </section>
   );
 }

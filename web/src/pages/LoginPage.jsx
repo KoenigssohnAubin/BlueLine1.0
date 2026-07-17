@@ -28,9 +28,9 @@ export default function LoginPage() {
     <div className="login-page">
       <form className="login-card" onSubmit={handleSubmit}>
         <h1>Blue Line IA</h1>
-        <p className="subtitle">Console de supervision</p>
+        <p className="subtitle">Dispatch console</p>
 
-        <label htmlFor="username">Identifiant</label>
+        <label htmlFor="username">Username</label>
         <input
           id="username"
           value={username}
@@ -39,7 +39,7 @@ export default function LoginPage() {
           required
         />
 
-        <label htmlFor="password">Mot de passe</label>
+        <label htmlFor="password">Password</label>
         <input
           id="password"
           type="password"
@@ -49,10 +49,10 @@ export default function LoginPage() {
           required
         />
 
-        {error && <p className="form-error">Identifiants invalides</p>}
+        {error && <p className="form-error">Invalid credentials</p>}
 
         <button type="submit" disabled={isLoading}>
-          {isLoading ? 'Connexion…' : 'Se connecter'}
+          {isLoading ? 'Signing in…' : 'Sign in'}
         </button>
       </form>
     </div>

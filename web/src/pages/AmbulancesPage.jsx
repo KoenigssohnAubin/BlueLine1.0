@@ -4,9 +4,9 @@ import DataTable from '../components/DataTable';
 
 const COLUMNS = [
   { key: 'code', header: 'Code' },
-  { key: 'model', header: 'Modèle' },
-  { key: 'status', header: 'Statut' },
-  { key: 'driver', header: 'Conducteur' },
+  { key: 'model', header: 'Model' },
+  { key: 'status', header: 'Status' },
+  { key: 'driver', header: 'Driver' },
   {
     key: 'position',
     header: 'Position',
@@ -20,9 +20,9 @@ export default function AmbulancesPage() {
   return (
     <section>
       <h2>Ambulances</h2>
-      {isLoading && <p>Chargement…</p>}
+      {isLoading && <p>Loading…</p>}
       {error && <p className="form-error">{error}</p>}
-      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="Aucune ambulance" />}
+      {data && <DataTable columns={COLUMNS} rows={data} emptyLabel="No ambulances" />}
     </section>
   );
 }

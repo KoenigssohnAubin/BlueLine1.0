@@ -41,10 +41,25 @@ export default function MapView({ ambulances = [], hospitals = [], missions = []
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
     const map = L.map(containerRef.current, { zoomControl: true }).setView([51.5074, -0.1278], 11);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+    const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 19,
     }).addTo(map);
+
+    const satellite = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      { attribution: 'Tiles &copy; Esri', maxZoom: 19 }
+    );
+
+    const satelliteLabels = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+      { maxZoom: 19, pane: 'shadowPane' }
+    );
+    const satelliteGroup = L.layerGroup([satellite, satelliteLabels]);
+
+    L.control.layers({ Street: streets, Satellite: satelliteGroup }, null, { position: 'topright' }).addTo(map);
+
     mapRef.current = map;
     layerRef.current = L.layerGroup().addTo(map);
 

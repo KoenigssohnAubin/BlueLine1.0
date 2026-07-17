@@ -4,6 +4,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import DashboardLayout from './components/DashboardLayout';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
+import MapPage from './pages/MapPage';
 import MissionsPage from './pages/MissionsPage';
 import AmbulancesPage from './pages/AmbulancesPage';
 import HospitalsPage from './pages/HospitalsPage';
@@ -24,6 +25,7 @@ export default function App() {
             </ProtectedRoute>
           }
         >
+          <Route path="/map" element={<MapPage />} />
           <Route path="/missions" element={<MissionsPage />} />
           <Route path="/ambulances" element={<AmbulancesPage />} />
           <Route path="/hospitals" element={<HospitalsPage />} />

@@ -3,6 +3,7 @@ import { useAuth } from '../auth/AuthContext';
 import logo from '../assets/logo.png';
 
 const NAV_ITEMS = [
+  { to: '/map', label: 'Map' },
   { to: '/missions', label: 'Missions' },
   { to: '/ambulances', label: 'Ambulances' },
   { to: '/hospitals', label: 'Hospitals' },

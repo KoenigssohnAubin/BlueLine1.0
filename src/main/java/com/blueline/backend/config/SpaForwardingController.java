@@ -13,6 +13,7 @@ public class SpaForwardingController {
 
     @RequestMapping({
             "/login",
+            "/map",
             "/missions", "/missions/**",
             "/ambulances", "/ambulances/**",
             "/hospitals", "/hospitals/**",

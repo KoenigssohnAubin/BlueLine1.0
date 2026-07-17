@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
+import logo from '../assets/logo.png';
 
 const NAV_ITEMS = [
   { to: '/missions', label: 'Missions' },
@@ -17,7 +18,10 @@ export default function DashboardLayout() {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div className="brand">Blue Line IA</div>
+        <div className="brand">
+          <img src={logo} alt="" className="brand-logo" />
+          Blue Line IA
+        </div>
         <nav>
           {NAV_ITEMS.filter((item) => !item.adminOnly || isAdmin).map((item) => (
             <NavLink

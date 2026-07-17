@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardLayout from './components/DashboardLayout';
+import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import MissionsPage from './pages/MissionsPage';
 import AmbulancesPage from './pages/AmbulancesPage';
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <AuthProvider>
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
           element={
@@ -22,7 +24,6 @@ export default function App() {
             </ProtectedRoute>
           }
         >
-          <Route path="/" element={<Navigate to="/missions" replace />} />
           <Route path="/missions" element={<MissionsPage />} />
           <Route path="/ambulances" element={<AmbulancesPage />} />
           <Route path="/hospitals" element={<HospitalsPage />} />
